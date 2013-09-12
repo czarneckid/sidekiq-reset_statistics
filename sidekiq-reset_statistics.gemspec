@@ -1,18 +1,18 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-require 'sidekiq_reset_statistics/version'
+require 'sidekiq-reset_statistics/version'
 
 Gem::Specification.new do |s|
-  s.name        = "sidekiq_reset_statistics"
+  s.name        = "sidekiq-reset_statistics"
   s.version     = Sidekiq::ResetStatistics::VERSION
   s.authors     = ["David Czarnecki"]
   s.email       = ["me@davidczarnecki.com"]
-  s.homepage    = "https://github.com/czarneckid/sidekiq_reset_statistics"
+  s.homepage    = "https://github.com/czarneckid/sidekiq-reset_statistics"
   s.summary     = %q{Adds a tab to your Sidekiq dashboard to allow you to reset Sidekiq statistics}
   s.description = %q{Adds a tab to your Sidekiq dashboard to allow you to reset Sidekiq statistics}
   s.license = 'MIT'
 
-  s.rubyforge_project = "sidekiq_reset_statistics"
+  s.rubyforge_project = "sidekiq-reset_statistics"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

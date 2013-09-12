@@ -1,5 +1,5 @@
 require 'rspec'
-require 'sidekiq_reset_statistics'
+require 'sidekiq-reset_statistics'
 require 'rack/test'
 
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
