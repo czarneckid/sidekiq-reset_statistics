@@ -1,0 +1,12 @@
+coverage
+rdoc
+doc
+.vagrant
+.yardoc
+.bundle
+pkg
+Gemfile.lock
+*.rdb
+.ruby-version
+.ruby-gemset
+.rvmrc
