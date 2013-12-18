@@ -1,3 +1,7 @@
 <form action="<%= root_path %>reset-statistics" method="post">
-  <input class="btn btn-danger pull-left" type="submit" name="reset_statistics" value="Reset Sidekiq Statistics" data-confirm="<%= t('AreYouSure') %>"/>
+  <% if Sidekiq::Stats.instance_method(:reset).arity == -1 %>
+    <input class="btn btn-danger pull-left" type="submit" name="reset_processed"  value="Reset Processed" data-confirm="<%= t('AreYouSure') %>"/>
+    <input class="btn btn-danger pull-left" type="submit" name="reset_failed"     value="Reset Failed"    data-confirm="<%= t('AreYouSure') %>"/>
+  <% end %>
+  <input class="btn btn-danger pull-left" type="submit" name="reset_all"        value="Reset All"       data-confirm="<%= t('AreYouSure') %>"/>
 </form>
