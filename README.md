@@ -22,4 +22,4 @@ gem 'sidekiq-reset_statistics'
 
 ## Copyright
 
-Copyright (c) 2013 David Czarnecki. See LICENSE.txt for further details.
+Copyright (c) 2013-2014 David Czarnecki. See LICENSE.txt for further details.
