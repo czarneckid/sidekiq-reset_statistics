@@ -10,7 +10,18 @@ module Sidekiq
         end
 
         app.post "/reset-statistics" do
-          Sidekiq::Stats.new.reset
+          stats  = Sidekiq::Stats.new
+          resets = params.values.grep(/Reset (?!All)/)
+
+          if resets.empty?
+            stats.reset
+          elsif stats.method(:reset).arity != -1
+            raise StandardError, "Version mismatch. Please upgrade Sidekiq."
+          else
+            counts = resets.map {|r| r.split.last.downcase }
+            stats.reset(*counts)
+          end
+
           redirect root_path
         end
       end
